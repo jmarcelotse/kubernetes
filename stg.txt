@@ -1,0 +1,44 @@
+fundos-gestora-stg                    fundos-gestora-stg-back-657f7d54d5-j6mck                        1/1     Running   0               3h36m
+fundos-gestora-stg                    fundos-gestora-stg-front-84577bcd65-7t7x4                       1/1     Running   0               8d
+fundos-gestora-stg                    fundos-gestora-stg-kafka-6d77d56449-hxzb5                       1/1     Running   0               8d
+fundos-gestora-stg                    fundos-gestora-stg-worker-c9fb79d65-gpxl6                       1/1     Running   0               3h36m
+lift-stg                              lift-stg-back-6cd7cbc5bd-66wpk                                  1/1     Running   0               8d
+lift-stg                              lift-stg-front-ffbf9768d-c74zw                                  1/1     Running   0               8d
+lift-stg                              lift-stg-worker-5f7c84f684-tl8g9                                1/1     Running   0               8d
+sso-stg                               vertc-sso-stg-7dbcdb5c88-545ll                                  1/1     Running   0               8d
+termo-endosso-stg                     vertc-asset-hml-back-6c7ff68755-4w928                           1/1     Running   0               8d
+termo-endosso-stg                     vertc-asset-hml-rqscheduler-5cbf7fc85c-sqbks                    1/1     Running   0               8d
+vert-central-eventos-stg              vert-central-eventos-stg-back-79958498b6-2pq2f                  1/1     Running   0               3h36m
+vert-central-eventos-stg              vert-central-eventos-stg-front-5594cb76b9-8bddj                 1/1     Running   0               7d3h
+vert-central-eventos-stg              vert-central-eventos-stg-kafka-6f757cc9d8-s7b27                 1/1     Running   0               7d7h
+vert-central-eventos-stg              vert-central-eventos-stg-worker-58dcdbf5cb-979kr                1/1     Running   0               8d
+vert-design-system-stg                vert-design-system-stg-front-758d847cc6-r8fp7                   1/1     Running   0               3h36m
+vert-ms-ocr-stg                       vert-ms-ocr-stg-back-5d98f6bc88-dwz8w                           1/1     Running   0               47m
+vert-site-stg                         vert-site-stg-back-7d78ffd68-zwx88                              1/1     Running   0               8d
+vertc-doc-classific-stg               vertc-doc-classific-stg-back-77975c84fb-chqjs                   1/1     Running   0               5h43m
+vertc-doc-classific-stg               vertc-doc-classific-stg-back-77975c84fb-kw8jt                   1/1     Running   0               5h43m
+vertc-doc-classific-stg               vertc-doc-classific-stg-back-77975c84fb-sdj7q                   1/1     Running   0               5h43m
+vertc-doc-classific-stg               vertc-doc-classific-stg-front-6f9bf78cdf-pcbhl                  1/1     Running   0               5h43m
+vertc-doc-classific-stg               vertc-doc-classific-stg-kafka-7bdff54984-7wp6g                  1/1     Running   0               5h43m
+vertc-doc-classific-stg               vertc-doc-classific-stg-worker-7cfcc697dd-47ntv                 1/1     Running   0               5h43m
+vertc-gestao-stg                      vertc-gestao-stg-back-58876dbcfb-7n7r2                          1/1     Running   0               22h
+vertc-lastros-stg                     vertc-lastros-front-stg-front-55b5df58b5-pl8hn                  1/1     Running   0               23h
+vertc-lastros-stg                     vertc-lastros-stg-back-c46d55b79-zgj4w                          1/1     Running   0               2d6h
+vertc-lastros-stg                     vertc-lastros-stg-kafka-6c657b6f68-2ddv5                        1/1     Running   0               2d6h
+vertc-lastros-stg                     vertc-lastros-stg-worker-755cb994c6-d9nht                       1/1     Running   0               2d6h
+vertc-lastros-sync-arquivos-stg       vertc-lastros-sync-arquivos-stg-back-65d669c55-n2c4w            1/1     Running   0               25h
+vertc-monorepo-gestao-ri-gestao-stg   vertc-monorepo-gestao-ri-gestao-stg-back-65cdbd6755-hx6bt       1/1     Running   0               30m
+vertc-monorepo-gestao-ri-ri-stg       vertc-monorepo-gestao-ri-ri-stg-back-7b5df4846d-vtvbx           1/1     Running   0               30m
+vertc-obrigacoes-hml                  vertc-ofiscais-stg-worker-update-867d54d7c4-7wx9n               1/1     Running   1 (3d21h ago)   7d5h
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-back-9f7f77dfb-h6lgq                         1/1     Running   0               8d
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-front-64b57488c9-2rx8l                       1/1     Running   0               8d
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-front-64b57488c9-b8tts                       1/1     Running   0               8d
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-front-64b57488c9-mh6d6                       1/1     Running   0               8d
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-kafka-645bdf77fd-4t4kz                       1/1     Running   0               8d
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-worker-create-66d679d478-55ngd               1/1     Running   1 (3d19h ago)   8d
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-worker-default-74c787ccb8-nv5qg              1/1     Running   0               7d3h
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-worker-delete-5b864c5547-4z72v               1/1     Running   1 (3d18h ago)   7d3h
+vertc-obrigacoes-stg                  vertc-ofiscais-stg-worker-update-6f5c6488c6-chzg8               1/1     Running   0               23h
+vertc-portal-ri-backend-stg           vertc-portal-ri-backend-stg-back-6755dff589-672qp               1/1     Running   0               23h
+vertc-verifica-lastros-stg            vertc-verifica-lastros-stg-back-89d5c4885-tdcnx                 1/1     Running   0               8d
+vertc-verifica-lastros-stg            vertc-verifica-lastros-stg-kafka-66dc588899-m7czl               1/1     Running   0               23h
