@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: meuprimeiropod
-spec:
-  containers:
-    - name: meuprimeiropod
-      image: kubedevio/nginx-color:blue
