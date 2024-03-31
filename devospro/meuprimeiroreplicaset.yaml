@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: meuprimeiroreplicaset
 spec:
-  replicas: 2y
+  replicas: 0
   selector:
     matchLabels:
       app: exemplo
