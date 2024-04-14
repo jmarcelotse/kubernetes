@@ -1,0 +1,51 @@
+kind create cluster
+kind create cluster --name kind-multinodes
+kind get clusters
+kind detele clusters
+kind detele clusters --name kind-multinodes
+kind create cluster --name kind-multinodes --config /home/marcelotse/tse/kubernetes/kind-3nodes.yaml
+
+https://highfalutin-vulture-304.notion.site/Instala-o-com-Kubeadm-8ce4f709872342ff848a4df77e53618d
+
+#### Hora de trabalhar com Kubernetes ###
+## Kurbenetes nos da escabilidade resiliencia e um facilidade na hora de gerir as aplicacoes ##
+# POD, REPLICASET, DEPLOYMENT E SERVICE todos utilizando o conceito de labels e selects #
+POD menor objeto nos cluster kubernetes no pode que executa os containers
+Nunca usar o POD como Deployment. O pod sozinho nao garante estabilidade e nem resiliencia
+
+kubectl api-resources
+
+kubectl apply -f meuprimeiropod.yaml 
+
+kubectl get pods
+
+kubectl describe pod meuprimeiropod
+
+kubectl port-forward pod/meuprimeiropod 8080:80
+
+kubectl delete pod meuprimeiropod
+
+# Labels e Selectors
+kubectl get pods -l versao=verde
+
+kubectl get pods -l app=nginx
+
+#ReplicaSet
+
+kubectl apply -f meuprimeiroreplicaset.yaml
+
+kubectl get pods
+
+kubectl port-forward pods/meuprimeiroreplicaset-nlld9 8080:80
+
+kubectl get replicasets
+
+kubectl describe replicasets.apps meuprimeiroreplicaset
+kubectl describe replicasets meuprimeiroreplicaset
+
+kubectl scale replicaset meuprimeiroreplicaset --replicas=3
+
+
+
+
+
