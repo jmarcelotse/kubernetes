@@ -45,7 +45,82 @@ kubectl describe replicasets meuprimeiroreplicaset
 
 kubectl scale replicaset meuprimeiroreplicaset --replicas=3
 
+#Deployment
+Responvasel por gerenciar o replicaset
+	Deployment
+		replicasets
+			Pods
+
+kubectl apply -f meuprimeirodeployment.yaml
+
+kubectl get pods 
+
+kubectl get replicasets
+
+kubectl get deployments
 
 
+kubectl describe deployments meuprimeirodeployment 
 
+kubectl scale deployment meuprimeirodeployment --replicas=4
 
+kubectl get pod -o wide
+
+kubectl get replicasets
+
+kubectl rollout history deployment meuprimeirodeployment
+
+kubectl rollout undo deployment meuprimeirodeployment
+
+kubectl set image deployment meuprimeirodeployment meucontainer=kubedevio/nginx-color:green
+
+kubectl delete deployments meuprimeirodeployment
+
+#ClusterIP
+Server para gerar conexao dentro do cluster kubernetes. Nada externo
+Para testar criar um deployment
+
+kubectl apply -f deployment.yaml
+
+kubectl get pods -o wide
+
+kubectl run -i --tty --image kubedevio/ubuntu-curl ping-test --restart=Never --rm -- /bin/bash
+curl http://10.244.0.127:8080/temperatura/fahrenheitparacelsius/100
+
+kubectl apply -f clusterip.yaml
+
+kubectl get services
+
+kubectl scale deployment api --replicas=1
+
+kubectl run -i --tty --image kubedevio/ubuntu-curl ping-test --restart=Never --rm -- /bin/bash
+curl http://api-service/temperatura/fahrenheitparacelsius/100
+
+#NodePort
+Server ja gera uma comunicacao externa 
+
+kubectl apply -f deployment.yaml
+
+kubectl apply -f nodeport.yaml
+
+kubectl get services
+
+docker container run --rm kubedevio/ubuntu-curl curl http://192.168.49.2:30668/temperatura/fahrenheitparacelsius/100
+
+curl http://192.168.49.2:30668/temperatura/fahrenheitparacelsius/100
+
+kubectl run -i --tty --image kubedevio/ubuntu-curl ping-test --restart=Never --rm -- /bin/bash
+
+#LoadBalancer
+kubectl apply -f deployment.yaml -f loadbalancer.yam
+
+kubectl get all
+
+#ExternalName
+
+kubectl apply -f deployment.yaml -f externalname.yaml
+
+#EndPoint
+kubectl apply -f deployment1.yaml -f nodeport.yaml
+
+kubectl get endpoints
