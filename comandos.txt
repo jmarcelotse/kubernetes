@@ -124,3 +124,38 @@ kubectl apply -f deployment.yaml -f externalname.yaml
 kubectl apply -f deployment1.yaml -f nodeport.yaml
 
 kubectl get endpoints
+
+#namespace
+
+kubectl get namespaces
+
+kubectl apply -f deploybluen.yaml -f deploygreenn.yaml  (apenas para teste vai criar no namespace default)
+
+kubectl get deployments
+
+kubectl get pods 
+
+kubectl port-forward pods/deployblue-74548fd5b-pr2rv 8080:80
+
+kubectl port-forward pods/deploygreen-7bf9b8c89-xd775 8080:80
+
+kubectl create namespace blue
+
+kubectl create namespace green
+
+kubectl get namespaces 
+
+kubectl apply -f deploybluen.yaml -n blue
+
+kubectl get deployments (nao vai mostrar o pod assim)
+
+kubectl get deployments -n blue
+
+Ou pode colocar dentro do manifesrto a flag namespace: greem
+
+kubectl apply -f deploygreenn.yaml
+
+kubectl get deployments -n green
+
+kubectl get deployments --all-namespace
+
