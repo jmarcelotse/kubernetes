@@ -159,3 +159,61 @@ kubectl get deployments -n green
 
 kubectl get deployments --all-namespace
 
+kubectl apply -f servicen.yaml -n blue
+
+kubectl apply -f servicen.yaml -n green
+
+kubectl get services --all-namespaces 
+NAMESPACE     NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                  AGE
+blue          service-nginx-color   NodePort    10.109.187.136   <none>        80:32556/TCP             65s
+default       kubernetes            ClusterIP   10.96.0.1        <none>        443/TCP                  46h
+green         service-nginx-color   NodePort    10.99.30.66      <none>        80:32393/TCP             36s
+kube-system   kube-dns              ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP   13d
+
+kubectl get nodes -o wide
+NAME       STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
+minikube   Ready    control-plane   13d   v1.28.3   192.168.49.2   <none>        Ubuntu 22.04.3 LTS   6.5.0-27-generic   docker://24.0.7
+
+http://192.168.49.2:32393/
+http://192.168.49.2:32556/
+
+kubectl run -i --tty --image kubedevio/ubuntu-curl ping-test --restart=Never --rm -- /bin/bash
+
+kubectl get pods --all-namespaces -o wide                                                     
+NAMESPACE     NAME                                  READY   STATUS    RESTARTS       AGE   IP             NODE       NOMINATED NODE   READINESS GATES
+blue          deploy-nginx-color-69cc9c8988-bgwwf   1/1     Running   0              37m   10.244.0.176   minikube   <none>           <none>
+default       ping-test                             1/1     Running   0              40s   10.244.0.178   minikube   <none>           <none>
+green         deploy-nginx-color-6b9fc9497f-m784l   1/1     Running   0              33m   10.244.0.177   minikube   <none>           <none>
+kube-system   coredns-5dd5756b68-45pd5              1/1     Running   1 (13d ago)    13d   10.244.0.3     minikube   <none>           <none>
+kube-system   etcd-minikube                         1/1     Running   1 (13d ago)    13d   192.168.49.2   minikube   <none>           <none>
+kube-system   kube-apiserver-minikube               1/1     Running   1 (4d8h ago)   13d   192.168.49.2   minikube   <none>           <none>
+kube-system   kube-controller-manager-minikube      1/1     Running   1 (13d ago)    13d   192.168.49.2   minikube   <none>           <none>
+kube-system   kube-proxy-nctzg                      1/1     Running   1 (13d ago)    13d   192.168.49.2   minikube   <none>           <none>
+kube-system   kube-scheduler-minikube               1/1     Running   1 (13d ago)    13d   192.168.49.2   minikube   <none>           <none>
+kube-system   storage-provisioner                   1/1     Running   3 (4d8h ago)   13d   192.168.49.2   minikube   <none>           <none>
+
+curl http://10.244.0.176
+curl http://10.244.0.177
+
+
+kubectl get services --all-namespaces -o wide 
+NAMESPACE     NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                  AGE     SELECTOR
+blue          service-nginx-color   NodePort    10.109.187.136   <none>        80:32556/TCP             9m19s   app=nginx-color
+default       kubernetes            ClusterIP   10.96.0.1        <none>        443/TCP                  47h     <none>
+green         service-nginx-color   NodePort    10.99.30.66      <none>        80:32393/TCP             8m50s   app=nginx-color
+kube-system   kube-dns              ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP   13d     k8s-app=kube-dns
+
+curl http://service-nginx-color.blue.svc.cluster.local
+
+curl http://service-nginx-color.green.svc.cluster.local
+
+name:service-nginx-color
+namespace:blue
+svc.cluster.local
+
+kubectl apply -f externalnameblue.yaml -f externalnamegreen.yaml
+
+O que 'e separado por namespace?
+kubectl api-resources
+kubectl api-resources --namespaced=true
+kubectl api-resources --namespaced=false
