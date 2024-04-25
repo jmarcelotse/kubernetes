@@ -253,3 +253,17 @@ http://192.168.49.2:31720/swagger/index.html
 
 ##Gerenciamento de Configuracao
 #ConfigMap e Secret
+
+kubectl apply -f devospro/k8s\\mongodb/mongodb-configmap.yaml
+
+kubectl get configmaps
+
+kubectl describe configmaps mongodb-configmap
+
+kubectl apply -f devospro/k8s\\mongodb/deployment.yaml
+
+kubectl apply -f devospro/k8s\\api/deployment.yaml -f devospro/k8s\\api/api-configmap.yaml -f devospro/k8s\\api/service.yaml
+
+kubectl get configmaps
+
+kubectl describe configmaps mongodb-configmap

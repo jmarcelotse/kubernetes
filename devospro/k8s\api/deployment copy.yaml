@@ -20,18 +20,14 @@ spec:
         - containerPort: 443
           name: https
         imagePullPolicy: Always
-        envFrom:
-          - configMapRef:
-              name: api-configmap
-
         env:
+        - name: Mongo_Host
+          value: "mongo-service"
         - name: Mongo_User
-          valueFrom:
-            configMapKeyRef:
-              key: MONGO_INITDB_ROOT_USERNAME
-              name: mongodb-configmap
+          value: "mongouser"
         - name: Mongo_Password
-          valueFrom:
-            configMapKeyRef:
-              key: MONGO_INITDB_ROOT_PASSWORD
-              name: mongodb-configmap
+          value: mongopwd
+        - name: Mongo_Port
+          value: "27017"
+        - name: Mongo_DataBase
+          value: "admin"
