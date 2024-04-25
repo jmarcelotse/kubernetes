@@ -217,3 +217,36 @@ O que 'e separado por namespace?
 kubectl api-resources
 kubectl api-resources --namespaced=true
 kubectl api-resources --namespaced=false
+
+
+#Deploy de uma aplicacao: GitHub ao Kubernetes
+
+docker build -t jmarcelotse/pedelogo-catalogo:v1.0.0 -f pedelogo-catalogo/src/PedeLogo.Catalogo.Api/Dockerfile pedelogo-catalogo
+
+docker image ls
+
+docker login
+
+docker push  jmarcelotse/pedelogo-catalogo:v1.0.0
+
+kubectl apply -f k8s\\mongodb/deployment.yaml
+
+kubectl get pods
+
+kubectl apply -f k8s\\mongodb/service.yaml
+
+kubectl get all  
+
+kubectl get endpoints
+
+kubectl apply -f k8s\\api/deployment.yaml
+
+kubectl get pods
+
+kubectl apply -f k8s\\api/service.yaml
+
+kubectl get all
+
+kubectl get nodes -o wide
+
+http://192.168.49.2:31720/swagger/index.html
