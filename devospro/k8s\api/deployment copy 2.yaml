@@ -23,14 +23,15 @@ spec:
         envFrom:
           - configMapRef:
               name: api-configmap
+
         env:
         - name: Mongo_User
           valueFrom:
-            secretKeyRef:
+            configMapKeyRef:
               key: MONGO_INITDB_ROOT_USERNAME
-              name: mongodb-secret
+              name: mongodb-configmap
         - name: Mongo_Password
           valueFrom:
-            secretKeyRef:
+            configMapKeyRef:
               key: MONGO_INITDB_ROOT_PASSWORD
-              name: mongodb-secret
+              name: mongodb-configmap

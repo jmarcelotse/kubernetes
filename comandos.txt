@@ -267,3 +267,15 @@ kubectl apply -f devospro/k8s\\api/deployment.yaml -f devospro/k8s\\api/api-conf
 kubectl get configmaps
 
 kubectl describe configmaps mongodb-configmap
+
+echo -n "mongouser" | base64
+
+echo -n "mongopwd" | base64
+
+kubectl apply -f devospro/k8s\\mongodb/mongodb-secret.yaml
+
+kubectl get secrets
+
+kubectl apply -f devospro/k8s\\api/deployment.yaml 
+
+
