@@ -251,4 +251,5 @@ kubectl get nodes -o wide
 
 http://192.168.49.2:31720/swagger/index.html
 
-#
+##Gerenciamento de Configuracao
+#ConfigMap e Secret
